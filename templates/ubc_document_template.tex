@@ -1,0 +1,128 @@
+%%%% IMPORT PACKAGES
+% DOCUMENT FORMATTING
+\usepackage[margin=1in]{geometry}     % Set margins
+\usepackage[onehalfspacing]{setspace} % Define line spacing
+\setlength{\parskip}{0pt}			  % Remove extra paragraph spacing
+\usepackage{mathpazo}                 % Times New Roman
+\usepackage{ragged2e}                 % Ragged text with hyphenation
+\usepackage[latin1]{inputenc}		  % For Spanish support
+\usepackage{fancyhdr}				  % For headers and footers
+\usepackage{titling}				  % Modify title alignment
+\usepackage{listings}				  % For including code
+\usepackage[titletoc]{appendix}		  % Appendix formatting
+
+% FIGURES
+\usepackage{float}                    % Define floating objects
+\usepackage{graphicx}                 % Allow importing of images
+\usepackage{subcaption}				  % Enable subfigures
+\usepackage{tikz}					  % Tikz figures
+
+% TABLES
+\usepackage{booktabs}                 % Generate nice tables
+\usepackage{adjustbox}	              % Adjust table sizing
+
+% MATH
+\usepackage{amsmath}                  % Mathematical formulas and symbols
+\usepackage{amssymb}                  % Extended math symbols (e.g. mathbb)
+\usepackage{bbm}					  % Double-striked math font
+
+% REFERENCES
+\usepackage{hyperref}                 % Hyperlinks for references
+
+% REFERENCES
+\usepackage{hyperref}                 % Hyperlinks for references
+\newcommand{\bibprefs}{
+			style=authoryear,
+            backend=biber,
+            natbib=true, % use natbib cite commands
+            url=false,
+            doi=true,
+            isbn=false,
+            eprint=false,
+            maxcitenames=4,
+            maxbibnames=10,
+            uniquelist=false,
+            uniquename=false
+}
+
+%%%% CUSTOMIZE DOCUMENT
+% Define command for title section
+\newcommand{\tsection}{
+	% TITLE, NAME AND DATE
+	\pretitle{\begin{flushleft} \LARGE}
+	\title{\clname \vspace{-0.1cm} \\ \pstitle}
+	\posttitle{\end{flushleft}}
+	\preauthor{\begin{flushleft} \large \vspace{-0.1cm} }
+	\author{\aname}
+	\postauthor{\end{flushleft}}
+	\predate{\begin{flushleft} \vspace{-0.1cm}}
+	\date{\today}
+	\postdate{\end{flushleft} \vspace{-0.5cm}}
+	
+	% FIRST PAGE
+	\begin{minipage}[c]{0.08\textwidth}
+	\vspace{-0.4cm}
+	\hspace{-1cm}
+	\includegraphics[width=2cm]{../templates/ubc-logo.png}
+	\end{minipage} % no space if you would like to put them side by side
+	\begin{minipage}[c]{1\textwidth}
+	\maketitle
+	\end{minipage}
+	\thispagestyle{empty}
+}
+
+% Headers
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE]{\thepage}	% Page number on outside of page
+\fancyhead[CE]{\clname}		% Class name on even pages
+% Footers
+\fancyhead[RO]{\thepage}	% Page number on outside of page
+\fancyhead[CO]{\pstitle}	% Problem set name on odd pages
+\fancyfoot{}				% Clear all footer fields
+
+% Define custom settings for Python language
+\lstdefinestyle{Python}{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,       % Basic font style (monospace)
+    keywordstyle=\color{blue},               % Python keywords in blue
+    commentstyle=\color{green!60!black},     % Comments in dark green
+    stringstyle=\color{orange},              % Strings in orange
+    numbers=left,                            % Line numbers on the left
+    numberstyle=\tiny\color{gray},           % Line number style
+    frame=single,                            % Single frame around listings
+    breaklines=true,                         % Automatic line breaking
+    captionpos=b,                            % Caption position at bottom
+    showspaces=false,                        % No special character for spaces
+    showstringspaces=false,                  % No special character for spaces in strings
+    showtabs=false,                          % No special character for tabs
+    tabsize=4,                               % Tab size of 4 spaces
+    breakatwhitespace=true,                  % Break lines at whitespace
+    escapeinside={\%*}{*)},                  % Escape sequences for LaTeX inside code
+    morekeywords={as},                       % Additional Python keywords
+}
+
+% Define custom settings for R language
+\lstdefinestyle{R}{
+    language=R,                             % Set language to R
+    basicstyle=\ttfamily\footnotesize,      % Basic font style (monospace)
+    keywordstyle=\color{blue}\bfseries,     % R keywords in bold blue
+    commentstyle=\color{green!60!black},    % Comments in dark green
+    stringstyle=\color{teal},               % Strings in teal
+    numbers=left,                           % Line numbers on the left
+    numberstyle=\tiny\color{gray},          % Line number style
+    frame=single,                           % Single frame around listings
+    breaklines=true,                        % Automatic line breaking
+    captionpos=b,                           % Caption position at bottom
+    showspaces=false,                       % No special character for spaces
+    showstringspaces=false,                 % No special character for spaces in strings
+    showtabs=false,                         % No special character for tabs
+    tabsize=4,                              % Tab size of 4 spaces
+    breakatwhitespace=true,                 % Break lines at whitespace
+    escapeinside={\%*}{*)},                 % Escape sequences for LaTeX inside code
+    morekeywords={if, else, repeat, while, function, for, in, next, break, TRUE, FALSE, NULL, NA, NaN, Inf}, % Additional R keywords
+}
+
+
+% Set the default style for listings
+\lstset{basicstyle=\ttfamily, frame=single, breaklines=true}
