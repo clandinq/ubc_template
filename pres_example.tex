@@ -1,0 +1,120 @@
+\documentclass[10pt,
+			   handout
+			   ]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\input{ubc_beamer_template.tex}
+
+%%%% ADDITIONAL COMMANDS
+% Spacing commands: insert vertical space
+\newcommand{\lskip}{\vspace{5mm}}
+\newcommand{\somespace}{\vspace{\baselineskip}}
+
+% Change how citing looks: own commands for small citations. USE THESE COMMANDS!
+\newcommand{\citeps}[1]{{\scriptsize\color{gray}\citep{#1}}}
+\newcommand{\citets}[1]{{\scriptsize\citet{#1}}}
+
+%%%% OWN CUSTOMIZATION: MODIFY THIS SECTION %%%%
+% 1. Comment this to include section title slides
+%\metroset{sectionpage=none}
+
+% 2. To enable incremental pauses in itemize, comment out "handout" on documentclass (line 2)
+
+% 3. Comment out to include references
+%\usepackage[\bibprefs]{biblatex}
+%\addbibresource{../paper/res_prop.bib}
+
+% 4. Define information for title slide
+\title{Insert Title Here}
+\subtitle{Subtitle Here}
+\date{Month day, year}
+\author{Your Name}
+\institute{Econ 999}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Title slide
+\tslide
+
+%\begin{frame}{Table of contents}
+%  \setbeamertemplate{section in toc}[sections numbered]
+%  \tableofcontents[hideallsubsections]
+%\end{frame}
+
+\begin{frame}{Proposal Summary}
+    \begin{itemize}
+        \item \textbf{What:}
+        \begin{itemize}
+            \item What you do
+        \end{itemize}
+    \end{itemize}
+    \pause
+    \begin{itemize}
+        \item \textbf{Why:}
+        \begin{itemize}
+            \item Why it's important
+        \end{itemize}
+    \end{itemize}
+    \pause
+    \begin{itemize}
+        \item \textbf{How:}
+        \begin{itemize}
+            \item How it's done
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+%%%% MOTIVATION %%%%
+\section{Motivation}
+
+% Motivation #1
+\begin{frame}{Motivation}
+    \begin{itemize}
+    	\item Motivation here
+    \end{itemize}
+\end{frame}
+
+%%%% IDENTIFICATION %%%%
+\section{Identification}
+
+% Motivation #2
+\begin{frame}{Identification}
+    \begin{itemize}[<+->]
+        \item Identification details
+    \end{itemize}
+\end{frame}
+
+%%%% IDENTIFICATION %%%%
+\section{Data}
+
+% Data on deaths
+\begin{frame}{Data: My data}
+    \begin{itemize}
+        \item Some details on the data
+    \end{itemize}
+\end{frame}
+
+%%%% IDENTIFICATION %%%%
+\section{Conclusion}
+
+% Data on deaths
+\begin{frame}{Wrapping Up}
+    \begin{itemize}
+        \item First contribution: add to limited literature on x and y
+        \begin{itemize}[<+->]
+	        \item First quasi-experimental evidence on w and z
+	    \end{itemize}
+	    \pause
+	    \item Second contribution: first evidence on what happens to firms 
+	    \begin{itemize}
+	    	\item Literature finds mixed effects 
+	    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+

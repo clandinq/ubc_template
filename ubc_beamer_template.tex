@@ -1,0 +1,121 @@
+%%%% IMPORT PACKAGES
+% FIGURES
+\usepackage{caption}				  % For captions
+\usepackage{subcaption}				  % Enable subfigures
+\usepackage{colortbl}				  % For highlighting
+
+% TABLES
+\usepackage{booktabs}                 % Generate nice tables
+\usepackage{adjustbox}	              % Adjust table sizing
+
+% MATH
+\usepackage{amsmath}                  % Mathematical formulas and symbols
+\usepackage{amssymb}                  % Extended math symbols (e.g. mathbb)
+\usepackage{bbm}					  % Double-striked math font
+
+% REFERENCES
+\usepackage{hyperref}                 % Hyperlinks for references
+\newcommand{\bibprefs}{
+			style=authoryear,
+            backend=biber,
+            natbib=true, % use natbib cite commands
+            url=false,
+            doi=true,
+            isbn=false,
+            eprint=false,
+            maxcitenames=4,
+            maxbibnames=10,
+            uniquelist=false,
+            uniquename=false
+}
+
+% OTHER FORMATTING
+\usepackage{appendixnumberbeamer}	 % Slide numbering with an appendix
+
+%%%% PACKAGE CUSTOMIZATION
+% Beamer cheat sheet: https://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+
+% Define UBC and additional colors
+\definecolor{ubcBlue}{RGB}{12,35,68}
+\definecolor{ubcBlue1}{RGB}{0,85,183}
+\definecolor{ubcBlue2}{RGB}{0,167,225}
+\definecolor{ubcBlue3}{RGB}{64,180,229}
+\definecolor{ubcBlue4}{RGB}{110,196,232}
+\definecolor{ubcBlue5}{RGB}{151,212,223}
+\definecolor{blue}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+
+% Change template colors
+\setbeamercolor{alerted text}{bg=ubcBlue1, fg = ubcBlue}
+\setbeamercolor{example text}{fg=ubcBlue1, bg=ubcBlue1}
+\setbeamercolor{title separator}{fg = ubcBlue, bg=ubcBlue}
+\setbeamercolor{progress bar}{bg=ubcBlue4, fg=ubcBlue1}
+\setbeamercolor{progress bar in head/foot}{bg=ubcBlue4, fg=ubcBlue1}
+\setbeamercolor{progress bar in section page}{bg=ubcBlue5, fg=ubcBlue1}
+\setbeamercolor{frametitle}{bg=ubcBlue}
+\setbeamercolor{section title}{fg=red, bg=red}
+
+% Define colors for links
+\hypersetup{
+  colorlinks=true,
+  linkbordercolor = {white},
+  linkcolor = {blue},
+  citecolor = {ubcBlue}
+}
+
+% Update thickness of progress bar (optional)
+%\makeatletter
+%\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+%\makeatother
+
+%%%% ADVANCED TITLE SLIDE CUSTOMIZATION %%%%
+
+% Title slide with UBC logo
+\makeatletter
+\newsavebox{\mybox}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \savebox{\mybox}{%
+      \begin{beamercolorbox}[%
+          wd=\paperwidth,%
+          sep=0pt,%
+          leftskip=\metropolis@frametitle@padding,%
+          rightskip=\metropolis@frametitle@padding,%
+        ]{frametitle}%
+      \metropolis@frametitlestrut@start\insertframetitle\metropolis@frametitlestrut@end%
+      \end{beamercolorbox}%
+    }
+  \begin{beamercolorbox}[%
+      wd=\paperwidth,%
+      sep=0pt,%
+      leftskip=\metropolis@frametitle@padding,%
+      rightskip=\metropolis@frametitle@padding,%
+    ]{frametitle}%
+  \metropolis@frametitlestrut@start\insertframetitle\metropolis@frametitlestrut@end%
+  \hfill%
+  \hspace*{-\metropolis@frametitle@padding}
+  \end{beamercolorbox}%
+}
+\makeatother
+
+% Define command for title slide
+\newcommand{\tslide}{
+\newcommand{\tspace}{2.1cm}
+\begin{frame}[plain]
+\begin{columns}[T]
+	\hspace{\tspace}
+	\begin{column}{.02\textwidth}
+		\vspace{2.25cm}
+		\hspace{-2cm}
+		\includegraphics[width=2cm]{ubc-logo.png}
+	\end{column}
+	\hspace{-0.2cm}
+    \begin{column}{.88\textwidth}
+		\maketitle	
+    \end{column}
+    \hspace{\tspace} 
+\end{columns}
+\end{frame}
+}
