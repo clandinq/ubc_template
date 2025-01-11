@@ -2,7 +2,7 @@
 
 This repository contains LaTeX templates for creating Beamer presentations and formal documents with the UBC colors and logo. The Beamer template was developed jointly with Everardo Tellez.
 
-You can get access to the beamer and document templates by downloading the [templates folder](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fclandinq%2Fubc_template%2Ftree%2Fmain%2Ftemplates), and find presentation and document examples in the [examples folder](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fclandinq%2Fubc_template%2Ftree%2Fmain%2Fexamples).
+You can get access to the beamer and document templates by downloading the [templates folder](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fclandinq%2Fubc_template%2Ftree%2Fmain%2Ftemplates), and find presentation and document examples in the <a href="https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fclandinq%2Fubc_template%2Ftree%2Fmain%2Fexamples" target="_blank">examples folder</a>.
 
 ## Features
 
