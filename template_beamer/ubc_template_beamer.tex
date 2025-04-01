@@ -1,4 +1,7 @@
 %%%% IMPORT PACKAGES
+% DOCUMENT FORMATTING
+\usepackage[utf8]{inputenc}		  % For Spanish support
+
 % FIGURES
 \usepackage{caption}				  % For captions
 \usepackage{subcaption}				  % Enable subfigures
@@ -31,6 +34,16 @@
 
 % OTHER FORMATTING
 \usepackage{appendixnumberbeamer}	 % Slide numbering with an appendix
+
+% CUSTOM CITING
+\newif\ifUseCustomCitations
+\ifUseCustomCitations
+    \newcommand{\citeps}[1]{{\scriptsize\color{gray}\citep{#1}}}
+    \newcommand{\citets}[1]{{\color{gray}\citet{#1}}}
+\else
+    \newcommand{\citeps}[1]{}
+    \newcommand{\citets}[1]{}
+\fi
 
 %%%% PACKAGE CUSTOMIZATION
 % Beamer cheat sheet: https://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
